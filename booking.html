@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>booking form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="#">chalo chale</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                </ul>
+                <ul class="navbar-nav" ms auto>
+                    <li class="nav-items"><a href="index2.html" class="nav-link">Home</a></li>
+                    <li class="nav-items"><a href="" class="nav-link">Destination</a></li>
+                    <li class="nav-items"><a href="" class="nav-link">Packages</a></li>
+                    <li class="nav-items"><a href="" class="nav-link">Booking</a></li>
+                    <li class="nav-items"><a href="" class="nav-link">Contact</a></li>
+                </ul>
+                <ul>
+                    <a href="" class="btn btn-warning ms-lg-3">Sign Up</a>
+                </ul>
+                  <ul>
+                    <a href="" class="btn btn-warning ms-lg-3">login</a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="py-5 bg-light text-center">
+        <div class="container">
+            <h1 class="fw-bold">Travel Booking Form</h1>
+            <p class="lead">Fill the form and Submit your travel request</p>
+        </div>
+    </section>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <div class="card shadow-lg p-4 rounded-4">
+                        <h3 class="text-center fw-bold mb-4">Book your trip</h3>
+                        <form>
+
+                            <div class="row">
+                                <div class="col-12 col-md-12 mb-3">
+                                    <label for="exampleInputName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="exampleInputName"
+                                        aria-describedby="text">
+                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-12 col-md-12 mb-3">
+                                <label class="form-lable">Select Destination</label>
+                            <select class="form-select" >
+                                <option selected>Goa</option>
+                                <option value="1">Manali</option>
+                                <option value="2">Assam</option>
+                                <option value="3">Uttarakhand</option>
+                            </select>
+                            </div>
+                             <div class="col-12 col-md-12 mb-3">
+                                 <label class="form-lable">Travel Date</label>
+                                 <input type="date" class="form-control">
+
+                             </div>
+                            </div>
+
+                            <div class="mb-3">
+                                 <label class="form-lable">Message / Requirement</label>
+                                 <textarea class="form-control" rows="4" placeholder="Enter any travel requirment"></textarea>
+                            </div>
+
+
+                            <button type="submit" class="btn btn-success w-100" >Submit booking request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

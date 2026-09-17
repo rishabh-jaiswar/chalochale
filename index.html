@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chale Chalo - Safar sirf manzil tak nahi, yaadon tak hota hai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-navy: #1a1a2e;
+            --bg-green: #1a3a2a;
+            --accent-orange: #ff6b35;
+            --accent-cyan: #00d4ff;
+            --text-cream: #f5f5f0;
+            --text-muted: #a0a0a0;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-cream);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Glassmorphism base class */
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .glass-light {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 15, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-cream);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-cyan));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-cream);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-orange);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .glass-btn {
+            padding: 0.7rem 1.5rem;
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            color: var(--text-cream);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .glass-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--accent-orange);
+            transform: translateY(-2px);
+        }
+
+        .glass-btn.primary {
+            background: linear-gradient(135deg, var(--accent-orange), #ff8c5a);
+            border: none;
+        }
+
+        .glass-btn.primary:hover {
+            background: linear-gradient(135deg, #ff8c5a, var(--accent-orange));
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .location-indicator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-right: 1rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-cream);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80') center/cover no-repeat;
+            filter: brightness(0.6);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 10, 15, 0.8) 0%, rgba(26, 26, 46, 0.6) 50%, rgba(10, 10, 15, 0.8) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-cream), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            color: var(--text-cream);
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .hero-btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .hero-btn.primary {
+            background: linear-gradient(135deg, var(--accent-orange), #ff8c5a);
+            color: white;
+        }
+
+        .hero-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .hero-btn.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-cream);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .hero-search {
+            animation: fadeInUp 1s ease 0.8s backwards;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 1rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            padding: 1rem 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            flex: 1;
+            background: none;
+            border: none;
+            color: var(--text-cream);
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .search-divider {
+            width: 1px;
+            background: var(--glass-border);
+        }
+
+        .search-btn {
+            background: linear-gradient(135deg, var(--accent-orange), #ff8c5a);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .travelers-card {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .travelers-count {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+        }
+
+        .travelers-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-cream), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Destinations Section */
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .destination-card {
+            position: relative;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .destination-card:nth-child(1) {
+            grid-column: span 2;
+        }
+
+        .destination-card:nth-child(4) {
+            grid-column: span 2;
+        }
+
+        .destination-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .destination-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .destination-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        }
+
+        .destination-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .destination-tags {
+            color: var(--accent-orange);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .destination-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-cream);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .destination-btn:hover {
+            color: var(--accent-orange);
+        }
+
+        /* Featured Trips */
+        .trips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .trip-card {
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .trip-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .trip-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 15px;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+
+        .trip-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-cyan);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .trip-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .trip-duration {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .trip-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            margin-bottom: 1rem;
+        }
+
+        .trip-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .trip-feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .trip-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--accent-orange), #ff8c5a);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .trip-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Travel Planner */
+        .planner-section {
+            background: linear-gradient(135deg, var(--bg-navy), var(--bg-green));
+            border-radius: 30px;
+            padding: 4rem;
+            margin: 4rem 2rem;
+        }
+
+        .planner-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .planner-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: var(--text-cream);
+        }
+
+        .form-input {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: var(--text-cream);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            border-color: var(--accent-orange);
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.2);
+        }
+
+        .planner-btn {
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--accent-orange), #ff8c5a);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .planner-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .itinerary-card {
+            padding: 2rem;
+        }
+
+        .itinerary-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .itinerary-route {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .itinerary-days {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .itinerary-day {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .day-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-orange), #ff8c5a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .day-content {
+            flex: 1;
+        }
+
+        .day-title {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .day-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Why Chale Chalo */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .feature-desc {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Community Section */
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .post-card {
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .post-user {
+            flex: 1;
+        }
+
+        .post-name {
+            font-weight: 600;
+        }
+
+        .post-location {
+            font-size: 0.85rem;
+            color: var(--accent-cyan);
+        }
+
+        .post-content {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .post-stats {
+            display: flex;
+            gap: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .post-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .share-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: var(--text-cream);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .share-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--accent-orange);
+        }
+
+        /* Travel Stories */
+        .stories-container {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding-bottom: 2rem;
+            scrollbar-width: none;
+        }
+
+        .stories-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .story-card {
+            flex: 0 0 400px;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .story-card:hover {
+            transform: scale(1.02);
+        }
+
+        .story-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+        }
+
+        .story-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .story-author {
+            color: var(--accent-cyan);
+            font-size: 0.9rem;
+        }
+
+        /* Map Section */
+        .map-section {
+            background: linear-gradient(135deg, var(--bg-navy), var(--bg-dark));
+            border-radius: 30px;
+            padding: 4rem;
+            margin: 4rem 2rem;
+            text-align: center;
+        }
+
+        .map-container {
+            position: relative;
+            height: 500px;
+            background: url('https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=1200&q=80') center/cover;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 15, 0.7);
+        }
+
+        .map-marker {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: var(--accent-orange);
+            border-radius: 50%;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .map-marker:hover {
+            transform: scale(1.2);
+            background: var(--accent-cyan);
+        }
+
+        .map-marker::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid var(--accent-orange);
+            animation: ripple 2s infinite;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .testimonial-quote {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .testimonial-info {
+            text-align: left;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+        }
+
+        .testimonial-location {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .testimonial-rating {
+            color: var(--accent-orange);
+            margin-top: 0.3rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 30px;
+            overflow: hidden;
+            margin: 4rem 2rem;
+        }
+
+        .cta-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80') center/cover no-repeat;
+        }
+
+        .cta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 15, 0.7);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 10;
+            max-width: 700px;
+            padding: 2rem;
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--bg-navy), var(--bg-dark));
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand {
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-tagline {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-cream);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent-orange);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-orange);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .destinations-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .destination-card:nth-child(1),
+            .destination-card:nth-child(4) {
+                grid-column: span 1;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-content {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 15, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-buttons {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .search-box {
+                flex-direction: column;
+                border-radius: 20px;
+            }
+
+            .search-divider {
+                display: none;
+            }
+
+            .travelers-card {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .destinations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .planner-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .planner-section,
+            .map-section {
+                padding: 2rem;
+                margin: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-content">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                Chale Chalo
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#explore">Explore</a></li>
+                <li><a href="#trips">Trips</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <div class="location-indicator">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Mumbai, India
+                </div>
+                <a href="#" class="glass-btn">Login</a>
+                <a href="#" class="glass-btn primary">Sign Up</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Chale Chalo.</h1>
+            <h2>Discover places. Create memories. Live the journey.</h2>
+            <p>Find breathtaking destinations, discover unforgettable experiences, and plan your next adventure with people who love to travel.</p>
+            <div class="hero-buttons">
+                <button class="hero-btn primary">Explore Destinations</button>
+                <button class="hero-btn secondary">Plan My Trip</button>
+            </div>
+            <div class="hero-search">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="📍 Where do you want to go?">
+                    <div class="search-divider"></div>
+                    <input type="text" class="search-input" placeholder="📅 When?">
+                    <div class="search-divider"></div>
+                    <input type="text" class="search-input" placeholder="👥 Travelers">
+                    <button class="search-btn">Explore</button>
+                </div>
+            </div>
+        </div>
+        <div class="travelers-card glass">
+            <div class="travelers-count">12,000+</div>
+            <div class="travelers-text">Travelers exploring India</div>
+        </div>
+    </section>
+
+    <!-- Explore Destinations -->
+    <section class="section" id="explore">
+        <div class="section-header">
+            <h2 class="section-title">Where will you go next?</h2>
+            <p class="section-subtitle">From the Himalayas to the beaches of Goa, your next adventure is waiting.</p>
+        </div>
+        <div class="destinations-grid">
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1584806664224-9a158578e0c7?w=800&q=80" alt="Himachal Pradesh">
+                <div class="destination-overlay">
+                    <h3 class="destination-name">Himachal Pradesh</h3>
+                    <p class="destination-tags">Mountains • Treks • Snow</p>
+                    <a href="#" class="destination-btn">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&q=80" alt="Goa">
+                <div class="destination-overlay">
+                    <h3 class="destination-name">Goa</h3>
+                    <p class="destination-tags">Beaches • Nightlife • Sunsets</p>
+                    <a href="#" class="destination-btn">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&q=80" alt="Uttarakhand">
+                <div class="destination-overlay">
+                    <h3 class="destination-name">Uttarakhand</h3>
+                    <p class="destination-tags">Mountains • Temples • Adventure</p>
+                    <a href="#" class="destination-btn">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?w=800&q=80" alt="Rajasthan">
+                <div class="destination-overlay">
+                    <h3 class="destination-name">Rajasthan</h3>
+                    <p class="destination-tags">Deserts • Forts • Culture</p>
+                    <a href="#" class="destination-btn">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&q=80" alt="Kerala">
+                <div class="destination-overlay">
+                    <h3 class="destination-name">Kerala</h3>
+                    <p class="destination-tags">Backwaters • Nature • Serenity</p>
+                    <a href="#" class="destination-btn">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1598426182307-6e8f9e93d91d?w=800&q=80" alt="Meghalaya">
+                <div class="destination-overlay">
+                    <h3 class="destination-name">Meghalaya</h3>
+                    <p class="destination-tags">Waterfalls • Clouds • Hidden Gems</p>
+                    <a href="#" class="destination-btn">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Trips -->
+    <section class="section" id="trips">
+        <div class="section-header">
+            <h2 class="section-title">Trips worth taking.</h2>
+            <p class="section-subtitle">Curated experiences that create unforgettable memories.</p>
+        </div>
+        <div class="trips-grid">
+            <div class="trip-card glass">
+                <img src="https://images.unsplash.com/photo-1634152962476-4b8a00e1915c?w=600&q=80" alt="Himalayan Escape" class="trip-image">
+                <div class="trip-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Manali → Kasol → Tosh
+                </div>
+                <h3 class="trip-title">Himalayan Escape</h3>
+                <p class="trip-duration">5 Days</p>
+                <div class="trip-price">₹12,999</div>
+                <div class="trip-features">
+                    <span class="trip-feature">Trekking</span>
+                    <span class="trip-feature">Camping</span>
+                    <span class="trip-feature">Mountain Views</span>
+                    <span class="trip-feature">Local Experiences</span>
+                </div>
+                <button class="trip-btn">View Trip</button>
+            </div>
+            <div class="trip-card glass">
+                <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80" alt="Goa Weekend" class="trip-image">
+                <div class="trip-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    North Goa → South Goa
+                </div>
+                <h3 class="trip-title">Goa Weekend</h3>
+                <p class="trip-duration">3 Days</p>
+                <div class="trip-price">₹8,999</div>
+                <div class="trip-features">
+                    <span class="trip-feature">Beach Hopping</span>
+                    <span class="trip-feature">Nightlife</span>
+                    <span class="trip-feature">Water Sports</span>
+                    <span class="trip-feature">Local Cuisine</span>
+                </div>
+                <button class="trip-btn">View Trip</button>
+            </div>
+            <div class="trip-card glass">
+                <img src="https://images.unsplash.com/photo-1599571234909-29ed5d1321d6?w=600&q=80" alt="Rajasthan Heritage" class="trip-image">
+                <div class="trip-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Jaipur → Jodhpur → Jaisalmer
+                </div>
+                <h3 class="trip-title">Rajasthan Heritage Trail</h3>
+                <p class="trip-duration">6 Days</p>
+                <div class="trip-price">₹15,999</div>
+                <div class="trip-features">
+                    <span class="trip-feature">Fort Tours</span>
+                    <span class="trip-feature">Desert Safari</span>
+                    <span class="trip-feature">Cultural Shows</span>
+                    <span class="trip-feature">Local Markets</span>
+                </div>
+                <button class="trip-btn">View Trip</button>
+            </div>
+            <div class="trip-card glass">
+                <img src="https://images.unsplash.com/photo-1598426182307-6e8f9e93d91d?w=600&q=80" alt="Meghalaya Explorer" class="trip-image">
+                <div class="trip-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Shillong → Cherrapunji → Dawki
+                </div>
+                <h3 class="trip-title">Meghalaya Explorer</h3>
+                <p class="trip-duration">5 Days</p>
+                <div class="trip-price">₹13,499</div>
+                <div class="trip-features">
+                    <span class="trip-feature">Living Root Bridges</span>
+                    <span class="trip-feature">Waterfall Trek</span>
+                    <span class="trip-feature">Cave Exploration</span>
+                    <span class="trip-feature">River Boating</span>
+                </div>
+                <button class="trip-btn">View Trip</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Planner -->
+    <section class="planner-section">
+        <div class="section-header">
+            <h2 class="section-title">Build your perfect journey.</h2>
+            <p class="section-subtitle">Customize every detail of your dream trip.</p>
+        </div>
+        <div class="planner-grid">
+            <div class="planner-form">
+                <div class="form-group">
+                    <label class="form-label">Starting Point</label>
+                    <input type="text" class="form-input" placeholder="Mumbai" value="Mumbai">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Destination</label>
+                    <input type="text" class="form-input" placeholder="Manali" value="Manali">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Travel Dates</label>
+                    <input type="text" class="form-input" placeholder="12 Oct – 17 Oct" value="12 Oct – 17 Oct">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Travel Style</label>
+                    <input type="text" class="form-input" placeholder="Adventure" value="Adventure">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Budget</label>
+                    <input type="text" class="form-input" placeholder="₹15,000" value="₹15,000">
+                </div>
+                <button class="planner-btn">Create My Trip</button>
+            </div>
+            <div class="itinerary-card glass">
+                <div class="itinerary-header">
+                    <h3 class="itinerary-route">Mumbai → Delhi → Manali → Kasol</h3>
+                    <span class="trip-duration">6 Days</span>
+                </div>
+                <div class="itinerary-days">
+                    <div class="itinerary-day">
+                        <div class="day-number">01</div>
+                        <div class="day-content">
+                            <div class="day-title">Travel to Manali</div>
+                            <div class="day-desc">Flight from Mumbai to Delhi, then drive to Manali</div>
+                        </div>
+                    </div>
+                    <div class="itinerary-day">
+                        <div class="day-number">02</div>
+                        <div class="day-content">
+                            <div class="day-title">Explore Solang Valley</div>
+                            <div class="day-desc">Adventure activities and mountain views</div>
+                        </div>
+                    </div>
+                    <div class="itinerary-day">
+                        <div class="day-number">03</div>
+                        <div class="day-content">
+                            <div class="day-title">Trek to nearby villages</div>
+                            <div class="day-desc">Local culture and scenic trails</div>
+                        </div>
+                    </div>
+                    <div class="itinerary-day">
+                        <div class="day-number">04</div>
+                        <div class="day-content">
+                            <div class="day-title">Kasol exploration</div>
+                            <div class="day-desc">Riverside camping and relaxation</div>
+                        </div>
+                    </div>
+                    <div class="itinerary-day">
+                        <div class="day-number">05</div>
+                        <div class="day-content">
+                            <div class="day-title">Adventure day</div>
+                            <div class="day-desc">River rafting and local experiences</div>
+                        </div>
+                    </div>
+                    <div class="itinerary-day">
+                        <div class="day-number">06</div>
+                        <div class="day-content">
+                            <div class="day-title">Return</div>
+                            <div class="day-desc">Travel back to Mumbai with memories</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Chale Chalo -->
+    <section class="section" id="about">
+        <div class="section-header">
+            <h2 class="section-title">Why Chale Chalo?</h2>
+            <p class="section-subtitle">More than just travel – it's about the journey.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card glass">
+                <div class="feature-icon">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <h3 class="feature-title">Discover</h3>
+                <p class="feature-desc">Find hidden destinations and unforgettable experiences off the beaten path.</p>
+            </div>
+            <div class="feature-card glass">
+                <div class="feature-icon">
+                    <i class="fas fa-compass"></i>
+                </div>
+                <h3 class="feature-title">Plan</h3>
+                <p class="feature-desc">Create personalized itineraries based on your interests and budget.</p>
+            </div>
+            <div class="feature-card glass">
+                <div class="feature-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="feature-title">Connect</h3>
+                <p class="feature-desc">Meet travelers and find people with similar travel interests.</p>
+            </div>
+            <div class="feature-card glass">
+                <div class="feature-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3 class="feature-title">Experience</h3>
+                <p class="feature-desc">Travel beyond tourist attractions and experience local culture.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Community -->
+    <section class="section" id="community">
+        <div class="section-header">
+            <h2 class="section-title">Travel is better together.</h2>
+            <p class="section-subtitle">Join our community of passionate travelers.</p>
+        </div>
+        <div class="community-grid">
+            <div class="post-card glass">
+                <div class="post-header">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Rahul" class="post-avatar">
+                    <div class="post-user">
+                        <div class="post-name">Rahul Sharma</div>
+                        <div class="post-location">📍 Kasol</div>
+                    </div>
+                </div>
+                <p class="post-content">"Finally completed my first Himalayan trek! 🏔️ The views were absolutely breathtaking and the local food was amazing."</p>
+                <div class="post-stats">
+                    <div class="post-stat">
+                        <i class="fas fa-heart"></i> 248 Likes
+                    </div>
+                    <div class="post-stat">
+                        <i class="fas fa-comment"></i> 32 Comments
+                    </div>
+                </div>
+            </div>
+            <div class="post-card glass">
+                <div class="post-header">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Ananya" class="post-avatar">
+                    <div class="post-user">
+                        <div class="post-name">Ananya Patel</div>
+                        <div class="post-location">📍 Meghalaya</div>
+                    </div>
+                </div>
+                <p class="post-content">"Found a waterfall that wasn't even on Google Maps! 🌊 Sometimes the best discoveries are the unexpected ones."</p>
+                <div class="post-stats">
+                    <div class="post-stat">
+                        <i class="fas fa-heart"></i> 186 Likes
+                    </div>
+                    <div class="post-stat">
+                        <i class="fas fa-comment"></i> 24 Comments
+                    </div>
+                </div>
+            </div>
+            <div class="post-card glass">
+                <div class="post-header">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Vikram" class="post-avatar">
+                    <div class="post-user">
+                        <div class="post-name">Vikram Singh</div>
+                        <div class="post-location">📍 Rajasthan</div>
+                    </div>
+                </div>
+                <p class="post-content">"Sunset at the Thar Desert was magical! 🌅 The colors were unlike anything I've ever seen before."</p>
+                <div class="post-stats">
+                    <div class="post-stat">
+                        <i class="fas fa-heart"></i> 312 Likes
+                    </div>
+                    <div class="post-stat">
+                        <i class="fas fa-comment"></i> 45 Comments
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="share-btn glass">Share Your Journey</button>
+    </section>
+
+    <!-- Travel Stories -->
+    <section class="section">
+        <div class="section-header">
+            <h2 class="section-title">Travel Stories</h2>
+            <p class="section-subtitle">Inspiring tales from our community</p>
+        </div>
+        <div class="stories-container">
+            <div class="story-card">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80" alt="Mountain Weekend">
+                <div class="story-overlay">
+                    <h3 class="story-title">A weekend in the mountains</h3>
+                    <p class="story-author">By Priya Sharma</p>
+                </div>
+            </div>
+            <div class="story-card">
+                <img src="https://images.unsplash.com/photo-1432405972618-c6b0a90a5b5c?w=600&q=80" alt="Waterfalls">
+                <div class="story-overlay">
+                    <h3 class="story-title">Chasing waterfalls in Meghalaya</h3>
+                    <p class="story-author">By Arjun Mehta</p>
+                </div>
+            </div>
+            <div class="story-card">
+                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80" alt="Road Trip">
+                <div class="story-overlay">
+                    <h3 class="story-title">The road trip we never planned</h3>
+                    <p class="story-author">By Sneha Reddy</p>
+                </div>
+            </div>
+            <div class="story-card">
+                <img src="https://images.unsplash.com/photo-1549144511-f099e773c147?w=600&q=80" alt="Rajasthan">
+                <div class="story-overlay">
+                    <h3 class="story-title">Sunsets of Rajasthan</h3>
+                    <p class="story-author">By Karthik Nair</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <h2 class="section-title">India is waiting.</h2>
+        <p class="section-subtitle">Explore destinations across the country</p>
+        <div class="map-container">
+            <div class="map-overlay"></div>
+            <div class="map-marker" style="top: 20%; left: 30%;" title="Manali">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="map-marker" style="top: 70%; left: 25%;" title="Goa">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="map-marker" style="top: 40%; left: 35%;" title="Jaipur">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="map-marker" style="top: 35%; left: 45%;" title="Rishikesh">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="map-marker" style="top: 30%; left: 65%;" title="Meghalaya">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="map-marker" style="top: 75%; left: 40%;" title="Kerala">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="map-marker" style="top: 15%; left: 50%;" title="Ladakh">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="section-header">
+            <h2 class="section-title">Stories from fellow travelers.</h2>
+            <p class="section-subtitle">Real experiences from our community</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card glass">
+                <p class="testimonial-quote">"Chale Chalo helped us turn a random weekend idea into one of our best trips. The planning was seamless and the experience was unforgettable!"</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Rajesh" class="testimonial-avatar">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Rajesh Kumar</div>
+                        <div class="testimonial-location">Delhi</div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card glass">
+                <p class="testimonial-quote">"The community aspect is what makes Chale Chalo special. I've met so many like-minded travelers and made friends for life."</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Meera" class="testimonial-avatar">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Meera Nair</div>
+                        <div class="testimonial-location">Bangalore</div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card glass">
+                <p class="testimonial-quote">"From discovering hidden gems to planning perfect itineraries, Chale Chalo has revolutionized how I travel. Absolutely recommend!"</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Amit" class="testimonial-avatar">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Amit Verma</div>
+                        <div class="testimonial-location">Mumbai</div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="cta-overlay"></div>
+        <div class="cta-content">
+            <h2 class="cta-title">Your next adventure starts here.</h2>
+            <p class="cta-text">Stop waiting for the perfect moment. Choose a destination and chale chalo.</p>
+            <div class="cta-buttons">
+                <button class="hero-btn primary">Start Exploring</button>
+                <button class="hero-btn secondary">Plan My Trip</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    Chale Chalo
+                </div>
+                <p class="footer-tagline">"Safar sirf manzil tak nahi, yaadon tak hota hai."</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Trips</a></li>
+                    <li><a href="#">Experiences</a></li>
+                    <li><a href="#">Travel Stories</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Community</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Travelers</a></li>
+                    <li><a href="#">Share a Journey</a></li>
+                    <li><a href="#">Travel Groups</a></li>
+                    <li><a href="#">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Chale Chalo. All rights reserved. Made with ❤️ in India.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all glass cards for animation
+        document.querySelectorAll('.glass, .glass-light').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Map marker interactions
+        document.querySelectorAll('.map-marker').forEach(marker => {
+            marker.addEventListener('click', function() {
+                const location = this.getAttribute('title');
+                alert(`Exploring ${location}! This would navigate to the ${location} destination page.`);
+            });
+        });
+    </script>
+</body>
+</html>
