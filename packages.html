@@ -1,0 +1,705 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ChaloChale - Packages</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Hero Section */
+        .package-hero {
+            height: 400px;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("https://images.unsplash.com/photo-1469474968028-56623f02e42e")
+                center/cover no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .package-hero h1 {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .package-hero p {
+            font-size: 20px;
+        }
+
+        /* Package Cards */
+        .package-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .package-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .package-card img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .package-title {
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .price {
+            color: #f0ad00;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .package-info {
+            color: #666;
+        }
+
+        .package-btn {
+            width: 100%;
+        }
+
+        /* Section heading */
+        .section-title {
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #212529;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+   
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div class="container-fluid">
+
+
+      <a class="navbar-brand" href="index2.html">
+        ChaloChale
+      </a>
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+
+        <span class="navbar-toggler-icon"></span>
+
+      </button>
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+
+
+        <ul class="navbar-nav">
+
+
+          <!-- Home -->
+
+          <li class="nav-item">
+
+            <a href="index2.html" class="nav-link">
+
+              Home
+
+            </a>
+
+          </li>
+
+
+          <!-- Destination -->
+
+          <li class="nav-item">
+
+            <a href="destinations.html" class="nav-link">
+
+              Destination
+
+            </a>
+
+          </li>
+
+
+          <!-- Packages -->
+
+          <li class="nav-item">
+
+            <a href="packages.html" class="nav-link active">
+
+              Packages
+
+            </a>
+
+          </li>
+
+
+          <!-- Booking -->
+
+          <li class="nav-item">
+
+            <a href="booking.html" class="nav-link">
+
+              Booking
+
+            </a>
+
+          </li>
+
+
+          <!-- Contact -->
+
+          <li class="nav-item">
+
+            <a href="contact.html" class="nav-link">
+
+              Contact
+
+            </a>
+
+          </li>
+
+
+        </ul>
+
+
+        <!-- Sign Up -->
+
+        <a href="signup.html" class="btn btn-warning ms-lg-3">
+
+          Sign Up
+
+        </a>
+
+
+        <!-- Login -->
+
+        <a href="login.html" class="btn btn-warning ms-lg-2">
+
+          Login
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+  </nav>
+
+   
+
+
+    <!-- Packages Section -->
+    <section class="py-5" id="packages">
+
+        <div class="container">
+
+            <h2 class="text-center section-title mb-2">
+                Available Travel Packages
+            </h2>
+
+            <p class="text-center text-muted mb-5">
+                Choose a package and start your next adventure
+            </p>
+
+
+            <div class="row g-4">
+
+
+                <!-- Package 1 -->
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card package-card h-100">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1548013146-72479768bada"
+                            class="card-img-top"
+                            alt="Manali">
+
+                        <div class="card-body">
+
+                            <h5 class="package-title">
+                                Manali Adventure
+                            </h5>
+
+                            <p class="package-info">
+                                Explore mountains, valleys and
+                                beautiful landscapes of Manali.
+                            </p>
+
+                            <p>
+                                <strong>Duration:</strong> 4 Days / 3 Nights
+                            </p>
+
+                            <p class="price">
+                                ₹12,999
+                            </p>
+
+                            <a href="booking.html"
+                                class="btn btn-primary package-btn">
+                                Book Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Package 2 -->
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card package-card h-100">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+                            class="card-img-top"
+                            alt="Kashmir">
+
+                        <div class="card-body">
+
+                            <h5 class="package-title">
+                                Kashmir Escape
+                            </h5>
+
+                            <p class="package-info">
+                                Experience the beauty of lakes,
+                                mountains and peaceful valleys.
+                            </p>
+
+                            <p>
+                                <strong>Duration:</strong> 5 Days / 4 Nights
+                            </p>
+
+                            <p class="price">
+                                ₹16,999
+                            </p>
+
+                            <a href="booking.html"
+                                class="btn btn-primary package-btn">
+                                Book Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Package 3 -->
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card package-card h-100">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1477587458883-47145ed94245"
+                            class="card-img-top"
+                            alt="Rajasthan">
+
+                        <div class="card-body">
+
+                            <h5 class="package-title">
+                                Rajasthan Heritage
+                            </h5>
+
+                            <p class="package-info">
+                                Discover royal palaces, forts,
+                                deserts and local culture.
+                            </p>
+
+                            <p>
+                                <strong>Duration:</strong> 5 Days / 4 Nights
+                            </p>
+
+                            <p class="price">
+                                ₹14,999
+                            </p>
+
+                            <a href="booking.html"
+                                class="btn btn-primary package-btn">
+                                Book Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Package 4 -->
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card package-card h-100">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944"
+                            class="card-img-top"
+                            alt="Kerala">
+
+                        <div class="card-body">
+
+                            <h5 class="package-title">
+                                Kerala Backwaters
+                            </h5>
+
+                            <p class="package-info">
+                                Relax among peaceful backwaters,
+                                beaches and greenery.
+                            </p>
+
+                            <p>
+                                <strong>Duration:</strong> 4 Days / 3 Nights
+                            </p>
+
+                            <p class="price">
+                                ₹13,999
+                            </p>
+
+                            <a href="booking.html"
+                                class="btn btn-primary package-btn">
+                                Book Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Package 5 -->
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card package-card h-100">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1544735716-392fe2489ffa"
+                            class="card-img-top"
+                            alt="Nepal">
+
+                        <div class="card-body">
+
+                            <h5 class="package-title">
+                                Nepal Explorer
+                            </h5>
+
+                            <p class="package-info">
+                                Explore Kathmandu, temples,
+                                mountains and local culture.
+                            </p>
+
+                            <p>
+                                <strong>Duration:</strong> 6 Days / 5 Nights
+                            </p>
+
+                            <p class="price">
+                                ₹19,999
+                            </p>
+
+                            <a href="booking.html"
+                                class="btn btn-primary package-btn">
+                                Book Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Package 6 -->
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card package-card h-100">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1470214304380-aadaedcfff1b"
+                            class="card-img-top"
+                            alt="Goa">
+
+                        <div class="card-body">
+
+                            <h5 class="package-title">
+                                Goa Beach Holiday
+                            </h5>
+
+                            <p class="package-info">
+                                Enjoy beaches, sunsets, nightlife
+                                and delicious local food.
+                            </p>
+
+                            <p>
+                                <strong>Duration:</strong> 3 Days / 2 Nights
+                            </p>
+
+                            <p class="price">
+                                ₹9,999
+                            </p>
+
+                            <a href="booking.html"
+                                class="btn btn-primary package-btn">
+                                Book Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Package 5 -->
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card package-card h-100">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1544735716-392fe2489ffa"
+                            class="card-img-top"
+                            alt="Nepal">
+
+                        <div class="card-body">
+
+                            <h5 class="package-title">
+                                Nepal Explorer
+                            </h5>
+
+                            <p class="package-info">
+                                Explore Kathmandu, temples,
+                                mountains and local culture.
+                            </p>
+
+                            <p>
+                                <strong>Duration:</strong> 6 Days / 5 Nights
+                            </p>
+
+                            <p class="price">
+                                ₹19,999
+                            </p>
+
+                            <a href="booking.html"
+                                class="btn btn-primary package-btn">
+                                Book Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Package 5 -->
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card package-card h-100">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1544735716-392fe2489ffa"
+                            class="card-img-top"
+                            alt="Nepal">
+
+                        <div class="card-body">
+
+                            <h5 class="package-title">
+                                Nepal Explorer
+                            </h5>
+
+                            <p class="package-info">
+                                Explore Kathmandu, temples,
+                                mountains and local culture.
+                            </p>
+
+                            <p>
+                                <strong>Duration:</strong> 6 Days / 5 Nights
+                            </p>
+
+                            <p class="price">
+                                ₹19,999
+                            </p>
+
+                            <a href="booking.html"
+                                class="btn btn-primary package-btn">
+                                Book Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Package 5 -->
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card package-card h-100">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1544735716-392fe2489ffa"
+                            class="card-img-top"
+                            alt="Nepal">
+
+                        <div class="card-body">
+
+                            <h5 class="package-title">
+                                Nepal Explorer
+                            </h5>
+
+                            <p class="package-info">
+                                Explore Kathmandu, temples,
+                                mountains and local culture.
+                            </p>
+
+                            <p>
+                                <strong>Duration:</strong> 6 Days / 5 Nights
+                            </p>
+
+                            <p class="price">
+                                ₹19,999
+                            </p>
+
+                            <a href="booking.html"
+                                class="btn btn-primary package-btn">
+                                Book Now
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+        
+
+    </section>
+
+
+    <!-- Why Choose Us -->
+    <section class="py-5 bg-light">
+
+        <div class="container">
+
+            <h2 class="text-center section-title mb-5">
+                What's Included?
+            </h2>
+
+            <div class="row text-center">
+
+                <div class="col-md-3 mb-4">
+
+                    <h4>🏨</h4>
+
+                    <h5>Hotel Stay</h5>
+
+                    <p class="text-muted">
+                        Comfortable and selected hotels.
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-3 mb-4">
+
+                    <h4>🚗</h4>
+
+                    <h5>Transportation</h5>
+
+                    <p class="text-muted">
+                        Convenient transportation during your trip.
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-3 mb-4">
+
+                    <h4>🍽️</h4>
+
+                    <h5>Meals</h5>
+
+                    <p class="text-muted">
+                        Delicious meals according to your package.
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-3 mb-4">
+
+                    <h4>🎧</h4>
+
+                    <h5>Travel Support</h5>
+
+                    <p class="text-muted">
+                        Assistance throughout your journey.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="py-4">
+
+        <div class="container text-center">
+
+            <h5>ChaloChale</h5>
+
+            <p class="mb-1">
+                Explore. Travel. Experience.
+            </p>
+
+            <p class="mb-0">
+                © 2026 ChaloChale. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

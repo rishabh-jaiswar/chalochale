@@ -1,0 +1,1441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ChaloChale - Destinations</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+
+
+
+
+
+
+        /* =========================
+           DESTINATION CARDS
+        ========================== */
+
+        .destination-card {
+
+            border: none;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.12);
+
+        }
+
+
+        .destination-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.20);
+
+        }
+
+
+        .destination-card img {
+
+            height: 220px;
+
+            object-fit: cover;
+
+        }
+
+
+        .destination-title {
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+        }
+
+
+        .destination-info {
+
+            color: #666;
+
+        }
+
+
+        .destination-btn {
+
+            width: 100%;
+
+        }
+
+
+
+        /* =========================
+           SECTION HEADING
+        ========================== */
+
+        .section-title {
+
+            font-weight: bold;
+
+        }
+
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+
+            background-color: #212529;
+
+            color: white;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div class="container-fluid">
+
+
+      <a class="navbar-brand" href="index2.html">
+        ChaloChale
+      </a>
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+
+        <span class="navbar-toggler-icon"></span>
+
+      </button>
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+
+
+        <ul class="navbar-nav">
+
+
+          <!-- Home -->
+
+          <li class="nav-item">
+
+            <a href="index2.html" class="nav-link">
+
+              Home
+
+            </a>
+
+          </li>
+
+
+          <!-- Destination -->
+
+          <li class="nav-item">
+
+            <a href="destinations.html" class="nav-link active">
+
+              Destination
+
+            </a>
+
+          </li>
+
+
+          <!-- Packages -->
+
+          <li class="nav-item">
+
+            <a href="packages.html" class="nav-link">
+
+              Packages
+
+            </a>
+
+          </li>
+
+
+          <!-- Booking -->
+
+          <li class="nav-item">
+
+            <a href="booking.html" class="nav-link">
+
+              Booking
+
+            </a>
+
+          </li>
+
+
+          <!-- Contact -->
+
+          <li class="nav-item">
+
+            <a href="contact.html" class="nav-link">
+
+              Contact
+
+            </a>
+
+          </li>
+
+
+        </ul>
+
+
+        <!-- Sign Up -->
+
+        <a href="signup.html" class="btn btn-warning ms-lg-3">
+
+          Sign Up
+
+        </a>
+
+
+        <!-- Login -->
+
+        <a href="login.html" class="btn btn-warning ms-lg-2">
+
+          Login
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+
+    
+
+
+
+    <!-- =========================
+         DESTINATION SECTION
+    ========================== -->
+
+    <section
+        class="py-5"
+        id="destinations">
+
+
+        <div class="container">
+
+
+            <h2
+                class="text-center section-title mb-2">
+
+                Popular Destinations
+
+            </h2>
+
+
+            <p
+                class="text-center text-muted mb-5">
+
+                Explore beautiful destinations
+                with ChaloChale.
+
+            </p>
+
+
+
+            <div class="row g-4">
+
+
+
+                <!-- =========================
+                     1. MANALI
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1548013146-72479768bada"
+                            class="card-img-top"
+                            alt="Manali">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Manali
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Experience beautiful mountains,
+                                valleys and adventure activities.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Himachal Pradesh
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     2. KASHMIR
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+                            class="card-img-top"
+                            alt="Kashmir">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Kashmir
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Enjoy peaceful valleys,
+                                beautiful lakes and mountains.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Jammu & Kashmir
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     3. RAJASTHAN
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1477587458883-47145ed94245"
+                            class="card-img-top"
+                            alt="Rajasthan">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Rajasthan
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Discover royal palaces,
+                                historic forts and colorful culture.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Rajasthan
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     4. KERALA
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944"
+                            class="card-img-top"
+                            alt="Kerala">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Kerala
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Relax among peaceful backwaters,
+                                beaches and lush greenery.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Kerala
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     5. GOA
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1470214304380-aadaedcfff1b"
+                            class="card-img-top"
+                            alt="Goa">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Goa
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Enjoy beautiful beaches,
+                                sunsets, food and nightlife.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Goa
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     6. NEPAL
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1544735716-392fe2489ffa"
+                            class="card-img-top"
+                            alt="Nepal">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Nepal
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Explore temples, mountains,
+                                local culture and landscapes.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Nepal
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     7. LADAKH
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1500534623283-312aade485b7"
+                            class="card-img-top"
+                            alt="Ladakh">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Ladakh
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Experience high mountains,
+                                scenic roads and peaceful landscapes.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Ladakh
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     8. MUMBAI
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f"
+                            class="card-img-top"
+                            alt="Mumbai">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Mumbai
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Explore beaches, landmarks,
+                                food and energetic city life.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Maharashtra
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     9. UTTARAKHAND
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1500534623283-312aade485b7"
+                            class="card-img-top"
+                            alt="Uttarakhand">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Uttarakhand
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Discover mountains, valleys,
+                                temples and peaceful nature.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Uttarakhand
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     10. SHIMLA
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1597074866923-dc0589150358"
+                            class="card-img-top"
+                            alt="Shimla">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Shimla
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Enjoy cool weather,
+                                mountain views and beautiful architecture.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Himachal Pradesh
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     11. JAIPUR
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1477587458883-47145ed94245"
+                            class="card-img-top"
+                            alt="Jaipur">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Jaipur
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Explore magnificent palaces,
+                                forts and colorful culture.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Rajasthan
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     12. AGRA
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1564507592333-c60657eea523"
+                            class="card-img-top"
+                            alt="Agra">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Agra
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Visit the iconic Taj Mahal
+                                and explore Mughal heritage.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Uttar Pradesh
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     13. RISHIKESH
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1"
+                            class="card-img-top"
+                            alt="Rishikesh">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Rishikesh
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Experience riverside views,
+                                yoga, spirituality and adventure.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Uttarakhand
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     14. DARJEELING
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1544634076-a90160ddf3b5"
+                            class="card-img-top"
+                            alt="Darjeeling">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Darjeeling
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Discover tea gardens,
+                                misty hills and Himalayan views.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                West Bengal
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     15. ANDAMAN
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1589979481223-deb893043163"
+                            class="card-img-top"
+                            alt="Andaman">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Andaman
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Enjoy crystal-clear water,
+                                beaches and exciting water activities.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Andaman & Nicobar
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     16. SIKKIM
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1609947017136-9daf32a5eb16"
+                            class="card-img-top"
+                            alt="Sikkim">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Sikkim
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Explore peaceful valleys,
+                                monasteries and mountain landscapes.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Sikkim
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     17. MEGHALAYA
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1605538883669-825200433431"
+                            class="card-img-top"
+                            alt="Meghalaya">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Meghalaya
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Discover waterfalls, caves,
+                                forests and beautiful landscapes.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Meghalaya
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     18. MYSORE
+                ========================== -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card destination-card h-100">
+
+
+                        <img
+                            src="https://images.unsplash.com/photo-1600100397608-f010a8a8e6e7"
+                            class="card-img-top"
+                            alt="Mysore">
+
+
+                        <div class="card-body">
+
+
+                            <h5 class="destination-title">
+                                Mysore
+                            </h5>
+
+
+                            <p class="destination-info">
+
+                                Explore magnificent palaces,
+                                historic sites and South Indian culture.
+
+                            </p>
+
+
+                            <p>
+
+                                <strong>Location:</strong>
+                                Karnataka
+
+                            </p>
+
+
+                            <a
+                                href="packages.html"
+                                class="btn btn-primary destination-btn">
+
+                                View Packages
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         TRAVEL EXPERIENCE
+    ========================== -->
+
+    <section class="py-5 bg-light">
+
+        <div class="container">
+
+
+            <h2 class="text-center section-title mb-5">
+
+                Choose Your Travel Experience
+
+            </h2>
+
+
+            <div class="row text-center">
+
+
+                <div class="col-md-3 mb-4">
+
+                    <h2>🏔️</h2>
+
+                    <h5>
+                        Mountain Trips
+                    </h5>
+
+                    <p class="text-muted">
+
+                        Explore mountains and scenic landscapes.
+
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-3 mb-4">
+
+                    <h2>🏖️</h2>
+
+                    <h5>
+                        Beach Holidays
+                    </h5>
+
+                    <p class="text-muted">
+
+                        Relax and enjoy beautiful beaches.
+
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-3 mb-4">
+
+                    <h2>🏛️</h2>
+
+                    <h5>
+                        Heritage Tours
+                    </h5>
+
+                    <p class="text-muted">
+
+                        Discover history, forts and culture.
+
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-3 mb-4">
+
+                    <h2>🌲</h2>
+
+                    <h5>
+                        Nature Trips
+                    </h5>
+
+                    <p class="text-muted">
+
+                        Spend time surrounded by nature.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="py-4 bg-dark text-white">
+
+
+        <div class="container text-center">
+
+
+            <h5>
+                ChaloChale
+            </h5>
+
+
+            <p class="mb-1">
+                Explore. Travel. Experience.
+            </p>
+
+
+            <p class="mb-0 text-secondary">
+
+                © 2026 ChaloChale.
+                All Rights Reserved.
+
+            </p>
+
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- Bootstrap JS -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+</body>
+
+</html>
+
